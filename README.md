@@ -12,6 +12,7 @@ L'application produits est une API qui va permettre de gérer un inventaire de p
   2. la mise à jour d'un produit,
   3. la suppression d'un produit,
   4. l'affichage de la liste des produits.
+  5. la consultation d'un produit ainsi que le signalement en cas d'atteinte du seuil d'alerte. 
      Un produit doit avoir un nom, un prix et la quantité en stock.
 ## Technology
 ***
