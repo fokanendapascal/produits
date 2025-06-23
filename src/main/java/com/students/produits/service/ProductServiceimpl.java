@@ -19,6 +19,7 @@ public class ProductServiceimpl implements ProductService{
 
     @Override
     public void createProduct(RegisterProductDto input) {
+
         if(productRepository.findProductByName(input.getName()).isEmpty()){
 
             Product product = new Product();
@@ -31,6 +32,7 @@ public class ProductServiceimpl implements ProductService{
         } else {
             throw new IllegalStateException("The product already exists!");
         }
+
     }
 
     @Override
@@ -39,6 +41,7 @@ public class ProductServiceimpl implements ProductService{
 
         if (product.isEmpty()){
             throw new IllegalStateException("Product with name " + name + "does not exists");
+
         }else if(product.get().getQuantityStock() < 5){
             throw new IllegalStateException("Alert Stock reached!(least than 5)" ) ;
         }
@@ -71,4 +74,5 @@ public class ProductServiceimpl implements ProductService{
         }
         productRepository.deleteById(id);
     }
+
 }

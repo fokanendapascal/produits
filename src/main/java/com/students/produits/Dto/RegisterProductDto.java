@@ -1,8 +1,6 @@
 package com.students.produits.Dto;
 
 
-
-
 public class RegisterProductDto {
 
     private String name;
@@ -41,4 +39,5 @@ public class RegisterProductDto {
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
+
 }

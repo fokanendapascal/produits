@@ -22,6 +22,7 @@ public class productController {
         this.productService = productService;
     }
 
+
     @Operation(summary = "Register a new Product")
     @ApiResponse(responseCode = "200", description = "Product registered successfully")
     @PostMapping("/signup")
@@ -39,6 +40,7 @@ public class productController {
 
     @Operation(summary = "Get All products", description = "Return list of products")
     @ApiResponse(responseCode = "200", description = "products found")
+
     @GetMapping
     List<Product> getAllProducts(){
         return productService.getAllProducts();
@@ -68,16 +70,5 @@ public class productController {
     void deleteProduct(@PathVariable Long id){
         productService.deleteProduct(id);
     }
-
-//    @Operation(summary = "Assess the alert level of a Product", description = "Stock product greater than 5 or Alert Stock reached")
-//    @ApiResponses(value = {
-//            @ApiResponse(responseCode = "200", description = "Stock product greater than 5"),
-//            @ApiResponse(responseCode = "404", description = "Alert Stock reached")
-//    })
-//    @GetMapping("/{name}")
-//    String lowStockAlert(Product name){
-//
-//        return productService.lowStockAlert(name);
-//    }
 
 }

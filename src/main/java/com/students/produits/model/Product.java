@@ -2,7 +2,6 @@ package com.students.produits.model;
 
 import jakarta.persistence.*;
 
-
 @Entity
 @Table(name = "product")
 public class Product {
@@ -11,19 +10,14 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
     @Column(nullable = false)
     private String name;
-
-
 
     @Column(nullable = false)
     private Long price;
 
-
     @Column(nullable = false)
     private Long quantityStock;
-
 
     @Column(nullable = true)
     private boolean selected;
@@ -59,4 +53,5 @@ public class Product {
     public void setSelected(boolean selected) {
         this.selected = selected;
     }
+
 }
