@@ -85,28 +85,24 @@
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>3.0.0</version> <!-- ✅ version disponible -->
-				<executions>
-					<execution>
-						<id>fetch-openapi-doc</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>curl</executable>
-							<arguments>
-								<argument>http://localhost:8083/v3/api-docs</argument>
-								<argument>-o</argument>
-								<argument>${project.build.directory}/openapi.json</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+            <plugin>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-maven-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>generate-openapi-json</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <apiDocsUrl>http://localhost:8083/v3/api-docs</apiDocsUrl>
+                            <outputFileName>openapi.json</outputFileName>
+                            <outputDir>${project.build.directory}/generated-docs</outputDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
 		</plugins>
 	</build>
